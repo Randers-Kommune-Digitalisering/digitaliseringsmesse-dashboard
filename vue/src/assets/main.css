@@ -1,35 +1,127 @@
-@import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+*
+{
+    box-sizing: border-box;
+    max-width: 100vw;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+body
+{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(249, 245, 241);
+    color: rgb(56, 65, 84);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
-@media (min-width: 1024px) {
-  body {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.main {
     display: flex;
-    place-items: center;
-  }
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+#logo {
+    color:rgb(229, 229, 229);
+    width: 10rem;
+}
+.header {
+    background-color: rgb(72, 83, 107);
+    color:rgb(242, 242, 242);
+    width: 100vw;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+    .header .title {
+        font-size: 2rem;
+        font-weight: 500;
+        font-family: 'Open Sans';
+        letter-spacing: 0.08rem;
+        margin: 0;
+    }
+.banner {
+    width: 100vw;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+    .banner .title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+        font-family: 'Open Sans', 'Segoe UI';
+    }
+        .title.slim {
+            font-size: 1.8rem!important;
+            font-weight: 300;
+        }
+        .title.underline {
+            border-bottom: 0.05rem solid rgb(72, 83, 107);
+            width: 100%;
+            margin-bottom: 0.8rem;
+        }
+    .banner .time {
+        margin-bottom: 0.2rem;
+        color:rgb(121, 121, 117);
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+    }
+    .banner .link {
+        font-size: 1.2rem;
+        font-weight: 500;
+        font-family: 'Roboto Slab';
+    }
+        .link p {
+            margin: 0;
+        }
+        .program .link {
+            color:rgb(161, 129, 135);
+        }
+        .idea .link {
+            color:rgb(226, 228, 205);
+        }
+.timer {
+    background-color: rgb(156, 156, 154);
+    color:rgb(242, 242, 242);
+}
+.program {
+    align-items: flex-start;
+    position: relative;
+    padding: 1rem;
+    flex-grow: 1;
+}
+.idea {
+    background-color: rgb(132, 138, 67);
+    color:rgb(242, 242, 242);
+    flex-grow: 1;
+}
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0rem 0rem;
+}
+.flex-start {
+    align-self: flex-start;
+}
+.flex-end {
+    align-self: flex-end;
+}
+.flex-center {
+    align-self: center;
 }
