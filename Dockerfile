@@ -1,25 +1,27 @@
-FROM node:lts-alpine
+FROM node:20-alpine
 
-# make the 'app' folder the current working directory
-WORKDIR /app
+ENV HOME=/app
+ENV FLASK_PORT=8080
+ENV VITE_PORT=3000
 
-# copy project files and folders to the current working directory
-COPY . .
+RUN  apk add python3 py3-pip musl-dev gcc libpq-dev mariadb-connector-c-dev postgresql-dev python3-dev
 
-# install project dependencies
-RUN cd vue && npm install
+WORKDIR $HOME/vue
 
-# build app for production with minification
-RUN cd vue && npm run build
+COPY ./vue/package*.json ./
 
-RUN cp -r vue/dist dist
+RUN cd $HOME/vue && npm install
 
-RUN rm -rf vue
+COPY ./vue $HOME/vue
 
-# install project dependencies
-RUN cd express && npm install
+WORKDIR $HOME/flask
 
-# Run express server
-RUN cd express && npm ci --only=production
+COPY ./flask/src $HOME/flask
 
-CMD [ "node", "express/server.js" ]
+RUN pip install --upgrade pip --break-system-packages
+
+RUN pip install -r requirements.txt --break-system-packages
+
+EXPOSE $FLASK_PORT $VITE_PORT
+
+ENTRYPOINT ["sh", "-c", "cd /app/flask && python main.py & cd /app/vue && npm run host"]
