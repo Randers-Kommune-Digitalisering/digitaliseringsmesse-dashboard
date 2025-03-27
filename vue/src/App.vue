@@ -106,11 +106,13 @@
 		
 		<div class="banner program">
 			<p class="title slim flex-center">Program for dagen</p>
-			<p class="time">{{ currentItem ? new Date(currentItem.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '' }}
-				- {{ currentItem ? new Date(currentItem.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '' }}
-			</p>
-			<p class="title">{{ currentItem.title }}</p>
-			<p v-html="currentItem.description.replace(/\n/g, '<br>')"></p>
+			<div>
+				<p class="time">{{ currentItem ? new Date(currentItem.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '' }}
+					- {{ currentItem ? new Date(currentItem.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '' }}
+				</p>
+				<p class="title">{{ currentItem.title }}</p>
+				<p v-html="currentItem.description.replace(/\n/g, '<br>')"></p>
+			</div>
 			<a class="link flex-end" target="_blank" href="https://www.canva.com/design/DAGbDUwBP-E/B8em1XKnJ9TwxS79W07kCA/view?utm_content=DAGbDUwBP-E&utm_campaign=designshare&utm_medium=link&utm_source=viewer">
 				<p>Se hele programmet her ></p>
 			</a>
