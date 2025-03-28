@@ -99,6 +99,8 @@ a {
 .timer {
     background-color: rgb(156, 156, 154);
     color:rgb(242, 242, 242);
+    flex-direction: row;
+    justify-content: space-between;
 }
 .program {
     align-items: flex-start;

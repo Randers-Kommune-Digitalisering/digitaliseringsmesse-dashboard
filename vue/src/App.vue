@@ -103,6 +103,10 @@
 		</div>
 
 		<div class="banner timer" v-if="!eventHasStarted">{{ !eventHasStarted ? ('Vi starter om ' + timeLeft) : '' }} :)</div>
+		<div class="banner timer" v-if="eventHasStarted">
+			<span class="yellow bold">QUIZ OG VIND!</span>
+			<a class="link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=eOhLmBthnE-6cKw91xB0VWlPJPP0nv1NqpXse0QUoTJURFlKT0hYMk9GRjBLNDNVNjNBTjM2RFBITy4u " target="_blank">Deltag i vores quiz her ></a>
+		</div>
 		
 		<div class="banner program">
 			<p class="title slim flex-center">Program for dagen</p>
@@ -129,3 +133,15 @@
 
 	</div>
 </template>
+
+<style scoped>
+.yellow {
+	color: rgb(255, 221, 0);
+}
+.bold {
+	font-weight: 600;
+}
+.timer a {
+	color: rgb(249, 245, 241);
+}
+</style>
